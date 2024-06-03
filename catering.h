@@ -1,5 +1,5 @@
-#ifndef FCATERING_H_INCLUDED
-#define FCATERING_H_INCLUDED
+#ifndef CATERING_H_INCLUDED
+#define CATERING_H_INCLUDED
 
 #include <stdio.h>
 void displayMenu();
