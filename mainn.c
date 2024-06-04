@@ -5,6 +5,7 @@
 #include "naming.c"
 #include "birthday.c"
 #include "housewarming.c"
+#include <string.h>
 
 int main() {
     int choice;
