@@ -1,4 +1,4 @@
-#include "catering"
+#include "catering.h"
 void displayMenu() {
     printf("\n===== Catering Service Menu =====\n");
     printf("1. Marriage Function\n");
