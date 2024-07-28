@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> f0e3f666cdefc242d9d83f4f40a2a4290ff9638d
 #include "catering.h"
 void birthdayParty() {
     char items[MAX_ITEMS][30] = {
