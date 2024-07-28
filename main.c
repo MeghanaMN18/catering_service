@@ -1,4 +1,6 @@
 #include "catering.h"
+#include "add.c"
+#include "clearinput.c"
 #include "delete.c"
 #include "displayItems.c"
 #include "displayMenu.c"
