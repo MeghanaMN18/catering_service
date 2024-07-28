@@ -1,37 +1,33 @@
 #include "catering.h"
 void birthdayParty() {
+    char items[MAX_ITEMS][30] = {
+        "Pizza", "Burger", "French Fries", "Ice Cream", "Cake",
+        "Chocolate", "Pasta", "Soft Drinks", "Cookies"
+    };
+    int item_count = 9;
+
     printf("\n===== Birthday Party Catering Service Menu =====\n");
-    printf("1. Vegetable Pizza\n");
-    printf("2. Veggie Burgers\n");
-    printf("3. French Fries\n");
-    printf("4. Veggie Hot Dogs\n");
-    printf("5. Vegetable Spring Rolls\n");
-    printf("6. Macaroni and Cheese\n");
-    printf("7. Fruit Platter\n");
+    displayItems(items, item_count);
     printf("===========================================\n");
 
-    int serving_choice;
-    printf("Enter the preferred serving style (1 for buffet, 2 for plated, 3 for family-style): ");
-    scanf("%d", &serving_choice);
+    modifyItems(items, &item_count);
 
-    char serving_style[20];
-    if (serving_choice == 1) {
-        strcpy(serving_style, "Buffet");
-    } else if (serving_choice == 2) {
-        strcpy(serving_style, "Plated");
-    } else if (serving_choice == 3) {
-        strcpy(serving_style, "Family-style");
-    } else {
-        printf("Invalid choice! Defaulting to Buffet.\n");
-        strcpy(serving_style, "Buffet");
-    }
+    char serving_style[30];
+    int serving_style_cost = getServingStyleCost(serving_style);
 
     int num_people;
-    printf("Enter the number of people attending the birthday party: ");
-    scanf("%d", &num_people);
+    do {
+        printf("Enter the number of people attending the birthday party (min 20 people): ");
+        num_people = getValidInt();
+        if (num_people < 20) {
+            printf("Please enter a valid number of people.\n");
+        }
+    } while (num_people < 20);
 
-    calculateCost(num_people, 250, "Birthday Party", serving_style); // Assuming each person costs Rs. 250 for birthday party
+    calculateCost(num_people, 200, serving_style_cost, "Birthday Party", serving_style);
 
-    printf("Preferred service style: %s\n", serving_style);
+    displayItems(items, item_count);
     printf("Thank you for choosing our service!\n");
+
+    saveOrderToFile("Birthday Party", num_people, 200, serving_style_cost, items, item_count, serving_style);
 }
