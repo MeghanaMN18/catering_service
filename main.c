@@ -1,10 +1,11 @@
-#include "fcatering.h"
+#include "catering.h"
 #include "display.c"
 #include "calculation.c"
 #include "marriage.c"
 #include "naming.c"
 #include "birthday.c"
 #include "housewarming.c"
+#include <string.h>
 
 int main() {
     int choice;
