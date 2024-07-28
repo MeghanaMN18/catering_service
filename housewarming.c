@@ -1,3 +1,4 @@
+
 #include "catering.h"
 void houseWarmingCeremony() {
     char items[MAX_ITEMS][30] = {
@@ -13,7 +14,7 @@ void houseWarmingCeremony() {
     modifyItems(items, &item_count);
 
     char serving_style[30];
-    int serving_style_cost = getServingStyleCost(serving_style); // Ensure this line is present
+    int serving_style_cost = getServingStyleCost(serving_style);
 
     int num_people;
     do {
@@ -24,11 +25,10 @@ void houseWarmingCeremony() {
         }
     } while (num_people < 25);
 
-    calculateCost(num_people, 250, serving_style_cost, "House Warming Ceremony", serving_style); // Assuming each person costs Rs. 250 for house warming
+    calculateCost(num_people, 250, serving_style_cost, "House Warming Ceremony", serving_style);
 
     displayItems(items, item_count);
     printf("Thank you for choosing our service!\n");
 
     saveOrderToFile("House Warming Ceremony", num_people, 250, serving_style_cost, items, item_count, serving_style);
 }
-
