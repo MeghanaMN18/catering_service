@@ -30,7 +30,8 @@ void houseWarming() {
     printf("Enter the number of people attending the house warming ceremony: ");
     scanf("%d", &num_people);
 
-    calculateCost(num_people, 300, "House Warming Ceremony", serving_style); // Assuming each person costs Rs. 300 for house warming
+    calculateCost(num_people, 250, serving_style_cost, "House Warming Ceremony", serving_style); // Assuming each person costs Rs. 250 for house warming
+ 
 
     printf("Preferred service style: %s\n", serving_style);
     printf("Thank you for choosing our service!\n");
